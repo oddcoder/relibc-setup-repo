@@ -1,0 +1,8 @@
+../configure								\
+	--prefix=/cross_tools	--disable-multilib			\
+	--with-sysroot=$LFS	--with-lib-path=/cross_tools/lib	\
+	--target=$LFS_TGT	--disable-nls				\
+	--disable-werror
+make -j4
+make install
+

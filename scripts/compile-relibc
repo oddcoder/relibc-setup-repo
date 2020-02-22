@@ -1,0 +1,1 @@
+make gentoo-install LIB=lib TMP=/cross_tools/

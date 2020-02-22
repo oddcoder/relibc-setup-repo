@@ -1,0 +1,1 @@
+make sure to create ${PREFIX}/usr/lib/libc.so to be filled with linker script GROUP pointing to ${PREFIX}/lib/libc.so

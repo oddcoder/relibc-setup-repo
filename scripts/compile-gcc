@@ -1,0 +1,15 @@
+../configure 							\
+	--target=$LFS_TGT					\
+	--prefix=/cross_tools					\
+	--with-sysroot=$LFS 					\
+	--with-newlib --without-headers				\
+	--with-local-prefix=/cross_tools/			\
+	--with-native-system-header-dir=/cross_tools/include	\
+	--disable-nls --disable-shared --disable-multilib	\
+	--disable-decimal-float --disable-threads		\
+	--disable-libatomic --disable-libgomp			\
+	--disable-libquadmath --disable-libssp			\
+	--disable-libvtv --disable-libstdcxx			\
+	--enable-languages=c,c++
+make -j4
+make install

@@ -1,0 +1,20 @@
+first
+$ gcc -dumpspecs > specs
+
+then 
+$ ln specs /cross_tools/lib/gcc/x86_64-lfs-linux-relibc/9.2.0/specs
+
+add to the `cpp:` target
+
+	-I/cross_tools/include -I/cross_tools/usr/include
+
+so we have something like this:
+	*cpp:
+	%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT} -I/cross_tools/include -I/cross_tools/usr/include
+
+we then go to `*startfile:`
+and replace crt1.o with /cross_tools/usr/lib/crt0.o and add /cross_tools/usr/lib/ to crti.o and crtn.o and remove the %s from all of them
+
+also replace /cross_tools/lib64/ld-linux-x86-64.so.2 with /cross_tools/lib/ld64.so.1
+
+in cc1 part remove all the -fPIC thing and add -fPIE at the end

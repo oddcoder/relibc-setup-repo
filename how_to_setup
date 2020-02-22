@@ -1,0 +1,31 @@
+Step 1
+$ mkdir ~/lfs
+$ mkdir ~/lfs/cross_tools/
+# ln -s ~/lfs/cross_tools/ /cross_tools
+
+compile binutils using script/compile_binutils
+
+run the follwing in gcc folder
+
+for file in gcc/config/{linux,i386/linux{,64}}.h
+do
+  cp -uv $file{,.orig}
+  sed -e 's@/lib\(64\)\?\(32\)\?/ld@/cross_tools&@g' \
+      -e 's@/usr@/cross_tools@g' $file.orig > $file
+  echo '
+#undef STANDARD_STARTFILE_PREFIX_1
+#undef STANDARD_STARTFILE_PREFIX_2
+#define STANDARD_STARTFILE_PREFIX_1 "/cross_tools/lib/"
+#define STANDARD_STARTFILE_PREFIX_2 ""' >> $file
+  touch $file.orig
+done
+
+compile gcc using scripts/compile-gcc
+
+apply patches/relibc/0001-Stage-1-with-debug-info.patch to relibc and compile it with the scripts/compile-relibc
+
+gcc -dumpspecs
+
+fix the specs as shown in specs_file then ln -s specs /cross_tools/lib/gcc/x86_64-lfs-linux-relibc/9.2.0/specs
+
+
