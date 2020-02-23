@@ -22,7 +22,7 @@ done
 
 compile gcc using scripts/compile-gcc
 
-apply patches/relibc/0001-Stage-1-with-debug-info.patch to relibc and compile it with the scripts/compile-relibc
+apply patches/relibc/stage1 to relibc and compile it with the scripts/compile-relibc
 
 gcc -dumpspecs
 
