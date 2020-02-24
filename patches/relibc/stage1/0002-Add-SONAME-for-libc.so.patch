@@ -1,7 +1,7 @@
-From c661a2cd0421087f3294c0ce9166c92dd838e85b Mon Sep 17 00:00:00 2001
+From d22fc6f05ace9b2d574c9aa6f92618c0cc9b6546 Mon Sep 17 00:00:00 2001
 From: oddcoder <ahmedsoliman@oddcoder.com>
 Date: Tue, 18 Feb 2020 20:35:53 +0200
-Subject: [PATCH 2/2] Add SONAME for libc.so
+Subject: [PATCH 2/5] Add SONAME for libc.so
 
 ---
  Makefile | 2 +-

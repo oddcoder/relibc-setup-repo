@@ -1,7 +1,7 @@
-From 453f07786410a66fba73e4a767ed31af9434eb96 Mon Sep 17 00:00:00 2001
+From 88539d76e690bbc3e6235b99cabbcc43305cbba3 Mon Sep 17 00:00:00 2001
 From: oddcoder <ahmedsoliman@oddcoder.com>
 Date: Tue, 18 Feb 2020 00:50:58 +0200
-Subject: [PATCH 1/2] Add install target for gentoo
+Subject: [PATCH 1/5] Add install target for gentoo
 
 We need a $LIB env variable, that variable would be lib64 in case of
 multilib or lib in case of non multilib

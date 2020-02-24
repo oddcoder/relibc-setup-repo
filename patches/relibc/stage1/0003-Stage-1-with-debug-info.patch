@@ -1,7 +1,7 @@
-From 57cc17c050512b78778fcf8e49655b42d6c57e80 Mon Sep 17 00:00:00 2001
+From 3ef6de8cf49bf13eb3aa03949c6667ed6980de99 Mon Sep 17 00:00:00 2001
 From: oddcoder <ahmedsoliman@oddcoder.com>
 Date: Sat, 22 Feb 2020 18:26:46 +0200
-Subject: [PATCH] Stage 1 with debug info
+Subject: [PATCH 3/5] Stage 1 with debug info
 
 ---
  Makefile | 52 +++++++++++++++++++++-------------------------------
