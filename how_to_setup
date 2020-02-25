@@ -24,6 +24,8 @@ compile gcc using scripts/compile-gcc
 
 apply patches/relibc/stage1 to relibc and compile it with the scripts/compile-relibc
 
+manually fix the LD_LIBPATH hardcoded in relibc ld.so before you compile it..
+
 gcc -dumpspecs
 
 fix the specs as shown in specs_file then ln -s specs /cross_tools/lib/gcc/x86_64-lfs-linux-relibc/9.2.0/specs
