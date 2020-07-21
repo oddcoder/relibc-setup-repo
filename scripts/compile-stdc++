@@ -1,0 +1,12 @@
+CC=$LFS_TGT-gcc                     	\
+AR=$LFS_TGT-ar                      	\
+RANLIB=$LFS_TGT-ranlib              	\
+../configure           		    	\
+    --host=$LFS_TGT                 	\
+    --prefix=/cross_tools           	\
+    --disable-multilib              	\
+    --disable-nls                   	\
+    --disable-libstdcxx-threads     	\
+    --disable-libstdcxx-pch         	\
+    --with-lib-path=/cross_tools/lib 	\
+    --with-gxx-include-dir=/cross_tools/$LFS_TGT/include/c++/9.2.0

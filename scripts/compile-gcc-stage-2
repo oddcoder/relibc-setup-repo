@@ -1,0 +1,22 @@
+# CFLAGS="-fpie -Og -g -ggdb3 -ggdb" \
+# CXXFLAGS="-fPIE -Og -g -ggdb3 -ggdb" \
+# LDFLAGS="-fPIE -Wl,-pie -Og -g -ggdb3 -ggdb" \
+CFLAGS="-Og -g -ggdb3 -ggdb" 					\
+CXXFLAGS="-Og -g -ggdb3 -ggdb" 					\
+LDFLAGS="-Og -g -ggdb3 -ggdb"					\
+CC=$LFS_TGT-gcc                                    	     	\
+CXX=$LFS_TGT-g++                                   	     	\
+AR=$LFS_TGT-ar                                     	     	\
+RANLIB=$LFS_TGT-ranlib                             	     	\
+../configure                                       	     	\
+    --with-lib-path=/cross_tools/lib				\
+    --prefix=/cross_tools                          	     	\
+    --with-local-prefix=/cross_tools				\
+    --with-native-system-header-dir=/cross_tools/usr/include	\
+    --enable-languages=c,c++                       	 	\
+    --disable-libstdcxx-pch                        	 	\
+    --disable-multilib                             	 	\
+    --disable-bootstrap                             	 	\
+    --disable-libgomp
+
+echo "MAKEINFO = :" >> Makefile

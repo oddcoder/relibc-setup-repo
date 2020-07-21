@@ -1,0 +1,11 @@
+CC=$LFS_TGT-gcc				\
+AR=$LFS_TGT-ar				\
+LD=$LFS_TGT-ld				\
+RANLIB=$LFS_TGT-ranlib			\
+../configure				\
+    --prefix=/cross_tools		\
+    --disable-nls			\
+    --disable-werror			\
+    --with-lib-path=/cross_tools/lib	\
+    --with-sysroot
+
